@@ -1,0 +1,30 @@
+ul.nav{
+	display:block;
+	list-style-type:none;
+	margin:0;
+	padding:0;	
+	background-color:#cfcccb;
+	overflow:hidden;
+	
+}
+
+li{
+float:right;	
+}
+
+p.NavTitle{
+text-align:center;	
+	
+}
+
+li a{
+display:block;
+color:black;
+text-align:center;
+padding:16px 16px;
+text-decoration:none
+	
+}
+li a:hover{
+	background-color:#b6b1af	
+}
