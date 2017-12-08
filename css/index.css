@@ -1,30 +1,65 @@
-ul.nav{
-	display:block;
-	list-style-type:none;
-	margin:0;
-	padding:0;	
-	background-color:#cfcccb;
-	overflow:hidden;
-	
+body{
+	color:White;
+}
+/*Divider CSS*/
+.headerDivider {
+	 border-right:1px solid #ffffff;
+     height:240px;
+     position:absolute;
+     right:249px;
+     top:10px; 
+}
+.sidebar{
+	text-align:right;
+	margin-right:5px;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	float:left;
+	padding:18px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover.flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 520px;
+	height: 240px;
 }
 
-li{
-float:right;	
+/* flip speed*/
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
 }
 
-p.NavTitle{
-text-align:center;	
-	
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-li a{
-display:block;
-color:black;
-text-align:center;
-padding:16px 16px;
-text-decoration:none
-	
+/* front pane, placed above back */
+.front, .back {
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:5px;
+	padding-right:5px;
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
 }
-li a:hover{
-	background-color:#b6b1af	
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	font-size:20px;
+	text-align:left;
 }
