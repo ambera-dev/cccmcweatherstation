@@ -9,10 +9,6 @@ body{
      right:249px;
      top:10px; 
 }
-.sidebar{
-	text-align:right;
-	margin-right:5px;
-}
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
