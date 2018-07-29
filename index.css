@@ -1,0 +1,60 @@
+body{
+	color:White;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	float:left;
+	padding:18px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover.flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 520px;
+	height: 240px;
+}
+
+/* flip speed*/
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+.footerCard {
+	position:relative;
+}
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front, .back {
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:5px;
+	padding-right:5px;
+	font-family: 'Quicksand';
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+.front{
+	text-align:center;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	font-size:20px;
+	text-align:left;
+}
