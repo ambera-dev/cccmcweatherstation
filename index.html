@@ -1,8 +1,4 @@
-<!-- Quick Note:
-I have only really tested this code for Firefox. Safari and IE have compatibility issues with some of this
-I will try to find a more "browser friendly" alternative to some of this code, but here's what I have for now.
-Should graphs be behind the cards if they are clicked (rather than hovered over)?
--->
+<!-- TODO: test on Safari, change layout to grid(?), get JSON requests working. About section needs to be added somewhere.-->
 <!DOCTYPE><html><head>
 <title>Weather @ CCCMC</title>
 <link rel="stylesheet" type="text/css" href="index.css">
@@ -11,20 +7,20 @@ Should graphs be behind the cards if they are clicked (rather than hovered over)
 
 </script>
 </head>
-<body style= "background-color:#222222;">
-<!--ADD HEADER CARD-->
+<body style= "background-color:#ffffff;">
+<!--Add logo here eventually???-->
 <!--CARD NUMBER 1 - TEMP-->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');"  style=width:630px;>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
-		<div class="front" style="background-color: #f1c40f; width:630px;">
+		<div class="front" style="background-color: #f1c40f;">
 			<font color="White" size="20px">temp&deg;<br>
 			<font size="5px">
 				<h4>Today:</h4>
 				<p>High: XX&deg;<br>Low: XX&deg;
 				</p></font></font>
 		</div>
-		<div class="back" style="background-color:#D79D1E; width:630px;">
-			Have more information about the weather here on the back of the card.</font>
+		<div class="back" style="background-color:#D79D1E;">
+			<img src="http://cccmcweather.com/daytempdew.png" alt="temp/Dew" width="400px"></font>
 		</div>
 	</div>
 </div>
@@ -38,7 +34,7 @@ Should graphs be behind the cards if they are clicked (rather than hovered over)
 				<p>NW </p></font></font>
 		</div>
 		<div class="back" style="background-color:#46B29D">
-			Have more information about the weather here on the back of the card.</font>
+			<img src="http://cccmcweather.com/daywind.png" alt="windSpeed" width = "400px"></font>
 		</div>
 	</div>
 </div>
@@ -52,7 +48,8 @@ Should graphs be behind the cards if they are clicked (rather than hovered over)
 				<p>Chance of rain: XX% </p></font></font>
 		</div>
 		<div class="back" style="background-color:#8e44ad;">
-		Rain Rate: xxx
+		<!--change links to local links when released: dayrain.png, etc.-->
+		<img src="http://www.cccmcweather.com/dayrain.png" alt="rain" width="400px">
 		<br>
 		
 		</div>
@@ -67,40 +64,40 @@ Should graphs be behind the cards if they are clicked (rather than hovered over)
 				<h3>XX</h3></font></font>
 		</div>
 		<div class="back" style="background-color:#e67e22;">
-			Have more information about the weather here on the back of the card.</font>
+			<img src="http://cccmcweather.com/daytempchill.png" alt="windChill" width="400px"></font>
 		</div>
 	</div>
 </div>
 <!--CARD NUMBER 5 - DEW POINT--->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');" style=width:630px;>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');";>
 	<div class="flipper">
-		<div class="front" style="background-color:#e74c3c; width:630px;">
+		<div class="front" style="background-color:#e74c3c;">
 			<font size="20px">Dew Point:<br>
 			<font size="5px">
 				<h2>XX%</h2>
 				</font></font>
 		</div>
-		<div class="back" style="background-color:#c0392b; width:630px">
-		Have more information about the weather here on the back of the card.</font>
+		<div class="back" style="background-color:#c0392b;">
+		<img src="http://cccmcweather.com/daytempdew.png" alt="temp/Dew" width="400px"></font>
 		</div>
 	</div>
 </div>
 <!--CARD NUMBER 6 - Pressure--->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');" style=width:630px;>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
-		<div class="front" style="background-color:#2ecc71; width:630px;">
+		<div class="front" style="background-color:#2ecc71;">
 			<font size="20px">Barometric Pressure:<br>
 			<font size="5px">
 				<h2>XX</h2>
 				</font></font>
 		</div>
-		<div class="back" style="background-color:#27ae60; width:630px">
-		placeholder text placeholder text
+		<div class="back" style="background-color:#27ae60;">
+		<img src="http://cccmcweather.com/daybarometer.png" alt="barometricPressure" width="400px">
 		</div>
 	</div>
 </div>
 <!--ALTITUDE-->
-<div class="flip-container" style="width:630px;">
+<div class="flip-container">
 	<div class="footerCard">
 		<div class="front" style="background-color: #3498db; width:630px; height:105px;">
 			<font size="6px">
