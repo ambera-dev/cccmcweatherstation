@@ -1,26 +1,24 @@
-<!-- TODO: test on Safari, change layout to grid(?), get JSON requests working. About section needs to be added somewhere.-->
 <!DOCTYPE><html><head>
 <title>Weather @ CCCMC</title>
 <link rel="stylesheet" type="text/css" href="index.css">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
-  </head>
-
+<script src = "data.json"></script>
+<script>
+var wData = JSON.parse(data);
 </script>
-</head>
+ </head>
 <body style= "background-color:#ffffff;">
-<!--Add logo here eventually???-->
 <!--CARD NUMBER 1 - TEMP-->
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color: #f1c40f;">
-			<font color="White" size="20px">temp&deg;<br>
+			<font color="White" size="7px"><p id="temp"><script>document.getElementById("temp").innerHTML = "Temp: " + wData.temp; </script></p>
 			<font size="5px">
-				<h4>Today:</h4>
-				<p>High: XX&deg;<br>Low: XX&deg;
-				</p></font></font>
+				<p id = "highTemp"><script>document.getElementById("highTemp").innerHTML = "High: "+wData.highTemp; </script></p><p id="lowTemp"><script>document.getElementById("lowTemp").innerHTML = "Low: "+wData.lowTemp; </script></p>
+				</font></font>
 		</div>
 		<div class="back" style="background-color:#D79D1E;">
-			<img src="http://cccmcweather.com/daytempdew.png" alt="temp/Dew" width="400px"></font>
+			<img src="http://cccmcweather.com/daytempdew.png" alt="temp/Dew" width="400px">
 		</div>
 	</div>
 </div>
@@ -28,13 +26,12 @@
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color:#63BFB0;">
-			<font color="White" size="20px">Wind Speed:<br>
-			<font size="5px">
-				<h3>XX mph.</h3>
-				<p>NW </p></font></font>
+			<font size="7px">
+				<p id="windSpeed"><script>document.getElementById("windSpeed").innerHTML = "Wind Speed: <br>"+wData.wind; </script></p>
+			</font>
 		</div>
 		<div class="back" style="background-color:#46B29D">
-			<img src="http://cccmcweather.com/daywind.png" alt="windSpeed" width = "400px"></font>
+			<img src="http://cccmcweather.com/daywind.png" alt="windSpeed" width = "400px">
 		</div>
 	</div>
 </div>
@@ -42,16 +39,11 @@
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color:#9370DB;">
-			<font color="White" size="20px">Precipitation:<br>
-			<font size="5px">
-				<h2>XX%</h2>
-				<p>Chance of rain: XX% </p></font></font>
+				<font size="7px"><p id="rain"><script>document.getElementById("rain").innerHTML = "Precipitation: <br>"+wData.rainToday; </script></p>
+				</font>
 		</div>
 		<div class="back" style="background-color:#8e44ad;">
-		<!--change links to local links when released: dayrain.png, etc.-->
-		<img src="http://www.cccmcweather.com/dayrain.png" alt="rain" width="400px">
-		<br>
-		
+			<img src="http://www.cccmcweather.com/dayrain.png" alt="rain" width="400px"><br>
 		</div>
 	</div>
 </div>
@@ -59,26 +51,22 @@
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color:#D79D1E;">
-			<font size="20px">Wind Chill:<br>
-			<font size="5px">
-				<h3>XX</h3></font></font>
+			<font size="7px"><p id="windChill"><script>document.getElementById("windChill").innerHTML = "Wind Chill: "+wData.windChill; </script></p></font>
 		</div>
 		<div class="back" style="background-color:#e67e22;">
-			<img src="http://cccmcweather.com/daytempchill.png" alt="windChill" width="400px"></font>
+			<img src="http://cccmcweather.com/daytempchill.png" alt="windChill" width="400px">
 		</div>
 	</div>
 </div>
 <!--CARD NUMBER 5 - DEW POINT--->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');";>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color:#e74c3c;">
-			<font size="20px">Dew Point:<br>
-			<font size="5px">
-				<h2>XX%</h2>
-				</font></font>
+			<font size="7px"><p id="dewPoint"><script>document.getElementById("dewPoint").innerHTML = "Dew Point: "+wData.dewPoint; </script></p>
+			</font>
 		</div>
 		<div class="back" style="background-color:#c0392b;">
-		<img src="http://cccmcweather.com/daytempdew.png" alt="temp/Dew" width="400px"></font>
+		<img src="http://cccmcweather.com/daytempdew.png" alt="temp/Dew" width="400px">
 		</div>
 	</div>
 </div>
@@ -86,10 +74,8 @@
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color:#2ecc71;">
-			<font size="20px">Barometric Pressure:<br>
-			<font size="5px">
-				<h2>XX</h2>
-				</font></font>
+			<font size="20px"><p id="baroPressure"><script>document.getElementById("baroPressure").innerHTML = "Pressure: "+wData.barometer; </script></p>
+			</font>
 		</div>
 		<div class="back" style="background-color:#27ae60;">
 		<img src="http://cccmcweather.com/daybarometer.png" alt="barometricPressure" width="400px">
@@ -101,8 +87,8 @@
 	<div class="footerCard">
 		<div class="front" style="background-color: #3498db; width:630px; height:105px;">
 			<font size="6px">
-				<p>Altitude: xx ft.
-				</p></font>
+				<p id="altitude"><script>document.getElementById("altitude").innerHTML = "Altitude: "+wData.altitude; </script></p>
+			</font>
 		</div>
 	</div>
 </div>
@@ -111,7 +97,7 @@
 	<div class="footerCard">
 		<div class="front" style="background-color: #3498db; width:630px; height:105px;">
 			<font size="6px">
-				<p>Last Refresh: 00:00
+				<p id = "lastRefresh"><script>document.getElementById("lastRefresh").innerHTML = "Last Refresh: "+wData.timeUpdated; </script>
 				</p></font>
 		</div>
 	</div>
