@@ -1,17 +1,20 @@
-<!DOCTYPE><html><head>
-<meta charset = "utf-8" />
-<title>Weather @ CCCMC</title>
-<link rel="stylesheet" type="text/css" href="css/index.css">
-<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
-<script type= "text/javascript" src ="js/general.js"></script>
- </head>
-<body style= "background-color:#ffffff;">
-<div class="front" style="position:relative; background-color:#0984e3; width:100%; height:160px;"><img src="cccmc-weather.png" width="960px"></div>
+<!--Banner designed by Logan Johnson @ CCCMC-->
+<!DOCTYPE><html>
+<head>
+	<meta charset = "utf-8"/>
+	<title>Weather @ CCCMC</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+	<script src = "data.json"></script>
+	<script type= "text/javascript" src ="js/general.js"></script>
+</head>
+<div class="front" style="position:relative; background-color:#dfe6e9; width:100%; height:160px;"><img src="cccmc-weather.png" width="960px"></div>
 <!--CARD NUMBER 1 - TEMP-->
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
 		<div class="front" style="background-color: #f1c40f;">
-			<font color="White" size="7px"><p id="temp"></p>
+			<font color="White" size="7px">
+				<p id="temp"></p>
 			<font size="5px">
 				<p id = "highTemp"></p><p id="lowTemp"></p>
 				</font></font>
@@ -65,7 +68,7 @@
 			</font>
 		</div>
 		<div class="back" style="background-color:#c0392b;">
-		<img src="daytempdew.png" alt="temp/Dew" width="400px">
+			<img src="daytempdew.png" alt="temp/Dew" width="400px">
 		</div>
 	</div>
 </div>
@@ -83,8 +86,7 @@
 </div>
 <!--Altitude & Last Refresh-->
 <div class="flip-container">
-	<div class="footerCard">
-		<div class="front" style="background-color: #3498db; width:100%; height:150px;">
+	<div class="footerCard" style="background-color: #3498db; width:100%; height:150px;">
 			<font size="6px">
 				<p id="altitude"></p><p id = "lastRefresh"></p>
 			</font>

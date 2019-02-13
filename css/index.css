@@ -1,13 +1,20 @@
 body{
 	color:White;
 }
+/*Centers all image elements, logo and graphs*/
+img{
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
 	float:left;
 	padding:18px;
+	text-align:center;
 }
-	/* flip the pane when hovered */
+
 	.flip-container:active .flipper, .flip-container.active.flipper {
 		transform: rotateY(180deg);
 	}
@@ -26,18 +33,20 @@ body{
 }
 .footerCard {
 	position:relative;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:5px;
+	padding-right:5px;
+	font-family: 'Quicksand';
+	text-align:center;
 }
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-
-/* front pane, placed above back */
-.front, .back {
+/*Place the front pane above the back*/
 	padding-top:10px;
 	padding-bottom:10px;
 	padding-left:5px;
@@ -47,11 +56,9 @@ body{
 	/* for firefox 31 */
 	transform: rotateY(0deg);
 }
-
-.front{
-	text-align:center;
+.front:hover, .back:hover{
+	opacity:0.80;
 }
-
 /* back, initially hidden pane */
 .back {
 	transform: rotateY(180deg);
