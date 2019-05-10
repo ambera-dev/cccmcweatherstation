@@ -1,97 +1,66 @@
-<!--Banner designed by Logan Johnson @ CCCMC-->
+<!--Header designed by Logan Johnson @ CCCMC-->
 <!DOCTYPE><html>
 <head>
 	<meta charset = "utf-8"/>
-	<title>Weather @ CCCMC</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
-	<script src = "data.json"></script>
-	<script type= "text/javascript" src ="js/general.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/general.js"></script>
 </head>
-<div class="footerCard" style="position:relative; background-color:#dfe6e9; width:100%; height:160px;"><img src="cccmc-weather.png" width="960px"></div>
-<!--CARD NUMBER 1 - TEMP-->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color: #f1c40f;">
-			<font color="White" size="7px">
-				<p id="temp"></p>
-			<font size="5px">
-				<p id = "highTemp"></p><p id="lowTemp"></p>
-				</font></font>
-		</div>
-		<div class="back" style="background-color:#D79D1E;">
-			<img src="daytempdew.png" alt="temp/Dew" width="400px">
+<body>
+<div id="header">
+	<img id="logo" src="cccmc-weather.png" alt="Weather Station Logo">
+</div>
+<!--Card Container-->
+<div class="card-columns">
+<div class="customcontainer">
+	<div class="card mb-4 shadow-sm" style="background:#FFC312;">
+		<div class="card-body">
+		  <p class="card-text biggerText text-light" id="temp"></p>
+		  <p class="card-text text-light" id="highTemp"></p>
+		  <p class="card-text text-light" id="lowTemp"></p>
 		</div>
 	</div>
-</div>
-<!--CARD NUMBER 2 - WIND SPEED-->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color:#63BFB0;">
-			<font size="7px">
-				<p id="windSpeed"></p>
-			</font>
-		</div>
-		<div class="back" style="background-color:#46B29D">
-			<img src="daywind.png" alt="windSpeed" width = "400px">
+	<div class="card mb-4 shadow-sm" style="background:#12CBC4;">
+		<div class="card-body">
+		  <p class="card-text bigText text-light" id="windSpeed"></p>
 		</div>
 	</div>
-</div>
-<!--CARD NUMBER 3 - RAIN-->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color:#9370DB;">
-				<font size="7px"><p id="rain"></p>
-				</font>
-		</div>
-		<div class="back" style="background-color:#8e44ad;">
-			<img src="dayrain.png" alt="rain" width="400px"><br>
-		</div>
+    <div class="card mb-4 shadow-sm" style="background:#D980FA;">
+	<div class="card-body">
+	  <p class="card-text text-light bigText" id="rain"></p>
 	</div>
-</div>
-<!--CARD NUMBER 4 - WIND CHILL-->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color:#D79D1E;">
-			<font size="7px"><p id="windChill"></p></font>
-		</div>
-		<div class="back" style="background-color:#e67e22;">
-			<img src="daytempchill.png" alt="windChill" width="400px">
-		</div>
+  </div>
+  <div class="card mb-4 shadow-sm" style="background:#F79F1F;">
+	<div class="card-body">
+	  <p class="card-text text-light bigText" id="windChill"></p>
 	</div>
-</div>
-<!--CARD NUMBER 5 - DEW POINT--->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color:#e74c3c;">
-			<font size="7px"><p id="dewPoint"></p>
-			</font>
-		</div>
-		<div class="back" style="background-color:#c0392b;">
-			<img src="daytempdew.png" alt="temp/Dew" width="400px">
-		</div>
+  </div>
+<div class="card mb-4 shadow-sm" style="background:#C4E538;">
+	<div class="card-body">
+	  <p class="card-text bigText text-light" id="baroPressure"></p>
 	</div>
-</div>
-<!--CARD NUMBER 6 - Pressure--->
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front" style="background-color:#2ecc71;">
-			<font size="20px"><p id="baroPressure"></p>
-			</font>
-		</div>
-		<div class="back" style="background-color:#27ae60;">
-		<img src="daybarometer.png" alt="barometricPressure" width="400px">
-		</div>
+  </div>
+  <div class="card mb-4 shadow-sm" style="background:#ED4C67;">
+	<div class="card-body">
+	  <p class="card-text bigText text-light" id="dewPoint"></p>
 	</div>
-</div>
-<!--Altitude & Last Refresh-->
-<div class="flip-container">
-	<div class="footerCard" style="background-color: #3498db; width:100%; height:150px;">
-			<font size="6px">
-				<p id="altitude"></p><p id = "lastRefresh"></p>
-			</font>
-		</div>
+  </div>
+  <div class="card mb-4 shadow-sm" style="background:#54a0ff;">
+	<div class="card-body">
+	  <p class="card-text bigText text-light" id="altitude"></p>
+	  <p class="card-text bigText text-light" id="lastRefresh"></p>
 	</div>
+  </div>
 </div>
-</body>
-</html>
+</div>
+<footer id="footer">
+<p>Developed by Andrew Pitts and Amber Atkins at CCCMC.</p>
+<p><b>Useful Links:</b></p>
+<p>
+	<a href="https://www.caldwellschools.com/Domain/1717">CCCMC Homepage</a><br>
+	<a href="https://www.wunderground.com/personal-weather-station/dashboard?ID=KNCHUDSO5">Wunderground Station</a>
+</p>
+</footer> 
+</body></html>
